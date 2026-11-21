@@ -1,0 +1,30 @@
+SETUP (makecode.microbit.org)
+ *   1. New Project -> Settings (gear) -> Extensions -> search "maqueen" -> pick the first one.
+ *   2. JavaScript tab -> delete everything -> paste this file -> Download to the micro:bit.
+ *   3. Claw servo plugged into S1. Fresh batteries; Maqueen power switch ON.
+ *   If line "maqueen.Ultrasonic()" shows red, change it to maqueen.Ultrasonic(PingUnit.Centimeters)
+ *   (older extension version).
+
+LAYOUT
+ *   - Mark the start point with tape. Robot on it, facing forward.
+ *   - One object in each direction listed in ANGLES (default: 45° left, straight ahead,
+ *     45° right), about 30 cm from the robot.
+ *   - Target object sits on MATTE black (paper/card/tape — shiny black doesn't work).
+ *     The black must reach 10–15 cm toward the robot so the sensors underneath
+ *     roll onto it before the robot gets close to the object.
+ *   - Rest of the floor light-coloured. Nothing else within ~60 cm.
+
+CALIBRATE (do once per robot, ~5 minutes)
+ *   1. CLAW: after switching on, the claw should close. Press B to open / close it.
+ *      Adjust CLAW_OPEN / CLAW_CLOSED below (low number = open, high = closed on our claws;
+ *      below ~100 is past the open limit). If the servo buzzes when closed, lower CLAW_CLOSED by 10.
+ *   2. FLOOR SENSOR: if the robot drives over black without stopping, change BLACK to 0.
+ *   3. TURNING: HOLD B while switching on -> robot does one full 360° turn.
+ *      Turned too little -> raise TURN_90_MS. Too much -> lower it. Repeat until it ends where it began.
+ *      (If the wheels hum but it doesn't turn, raise TURN_SPEED.)
+
+--ADDITIONAL INFORMATION--
+SCREEN
+ *   ☺ starting · 1/2/3 trip number · ✓ black found, grabbing · ✗ wrong object
+ *   ◆ done, holding object at start · ? no target found
+ *   Stop in an emergency: switch the robot off.
