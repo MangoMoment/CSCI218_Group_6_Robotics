@@ -14,6 +14,7 @@ Motivation: Retrieve aid resources in inaccessible areas and return while avoidi
 ## Setup
 
 **requirements.txt**
+
 **https://makecode.microbit.org/**
 
 The following code were written using Python and the micro:maqueen extension for the Microsoft MakeCode for micro:bit with the mechanic beetle part.
